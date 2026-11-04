@@ -3,7 +3,7 @@
 #include "cstructs/queue.h"
 
 typedef struct element {
-    int value;
+    long long value;
     struct element* next;
 } element;
 
@@ -13,7 +13,7 @@ typedef struct queue {
     element* last;
 } Queue;
 
-void enqueue(Queue* q, int value) {
+void enqueue(Queue* q, long long value) {
     element* new = malloc(sizeof(element));
     new->value = value;
     new->next = NULL;
@@ -34,7 +34,7 @@ void enqueue(Queue* q, int value) {
     q->size++;
 }
 
-int dequeue(Queue* q) {
+long long dequeue(Queue* q) {
     element* temp = q->first;
     int value = temp->value;
 
