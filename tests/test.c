@@ -15,7 +15,8 @@ int main() {
     queueS = CU_add_suite("Queue", NULL, NULL);
     if (queueS == NULL) cleanup();
 
-    if (!CU_add_test(queueS, "queue", test_queue)) cleanup();
+    if (!CU_add_test(queueS, "queue", test_enqueue_1)) cleanup();
+    if (!CU_add_test(queueS, "queue", test_enqueue_2)) cleanup();
     if (!CU_add_test(queueS, "dequeue", test_dequeue)) cleanup();
 
     CU_basic_set_mode(CU_BRM_VERBOSE);

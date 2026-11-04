@@ -13,7 +13,7 @@ typedef struct queue {
     element* last;
 } Queue;
 
-void queue(Queue* q, int value) {
+void enqueue(Queue* q, int value) {
     element* new = malloc(sizeof(element));
     new->value = value;
     new->next = NULL;
@@ -43,6 +43,10 @@ int dequeue(Queue* q) {
     free(temp);
 
     q->size--;
+
+    if (q->size == 1)
+        q->last = NULL;
+
     return value;
 }
 

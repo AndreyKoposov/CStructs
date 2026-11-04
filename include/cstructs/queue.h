@@ -4,7 +4,7 @@
 
 typedef struct queue Queue;
 
-void queue(Queue* q, int value);
+void enqueue(Queue* q, int value);
 int dequeue(Queue* q);
 Queue* create_queue();
 void destroy_queue(Queue* q);
