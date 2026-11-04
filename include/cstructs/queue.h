@@ -8,7 +8,7 @@ void enqueue(Queue* q, long long value);
 long long dequeue(Queue* q);
 Queue* queue_create();
 void queue_destroy(Queue* q);
-int queue_size(Queue* q);
+size_t queue_size(Queue* q);
 
 
 #endif

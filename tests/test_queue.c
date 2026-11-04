@@ -80,7 +80,7 @@ void test_dequeue(void) {
     queue_destroy(q);
 }
 
-void test_destroy(void) {
+void test_destroy_queue(void) {
     // Arrange
     Queue* q = queue_create();
     enqueue(q, 1);

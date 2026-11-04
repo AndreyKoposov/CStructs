@@ -8,10 +8,10 @@ SRC_DIR   := src
 TEST_DIR  := tests
 
 LIB 	:= $(BUILD_DIR)/libcstructs.so
-LIB_OBJ := $(BUILD_DIR)/queue.o
+LIB_OBJ := $(BUILD_DIR)/queue.o  $(BUILD_DIR)/stack.o
 
 TEST 	:= $(BUILD_DIR)/test
-TEST_OBJ := $(BUILD_DIR)/test.o $(BUILD_DIR)/test_queue.o
+TEST_OBJ := $(BUILD_DIR)/test.o $(BUILD_DIR)/test_queue.o $(BUILD_DIR)/test_stack.o
 
 .PHONY: lib test clean
 

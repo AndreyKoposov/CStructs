@@ -36,7 +36,7 @@ void enqueue(Queue* q, long long value) {
 
 long long dequeue(Queue* q) {
     element* temp = q->first;
-    int value = temp->value;
+    long long value = temp->value;
 
     q->first = temp->next;
 
@@ -68,6 +68,6 @@ void queue_destroy(Queue* q) {
     free(q);
 }
 
-int queue_size(Queue* q) {
+size_t queue_size(Queue* q) {
     return q->size;
 }
