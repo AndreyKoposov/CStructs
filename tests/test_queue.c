@@ -5,7 +5,7 @@
 
 void test_enqueue_1(void) {
     // Arrange
-    Queue* q = create_queue();
+    Queue* q = queue_create();
 
     // Act
     enqueue(q, 1);
@@ -14,19 +14,19 @@ void test_enqueue_1(void) {
     enqueue(q, 4);
 
     // Assert
-    CU_ASSERT_EQUAL(size_queue(q), 4);
+    CU_ASSERT_EQUAL(queue_size(q), 4);
     CU_ASSERT_EQUAL(dequeue(q), 1);
     CU_ASSERT_EQUAL(dequeue(q), 2);
     CU_ASSERT_EQUAL(dequeue(q), 3);
     CU_ASSERT_EQUAL(dequeue(q), 4);
 
     // Cleanup
-    destroy_queue(q);
+    queue_destroy(q);
 }
 
 void test_enqueue_2(void) {
     // Arrange
-    Queue* q = create_queue();
+    Queue* q = queue_create();
 
     // Act
     enqueue(q, 1);
@@ -43,7 +43,7 @@ void test_enqueue_2(void) {
     int val6 = dequeue(q);
 
     // Assert
-    CU_ASSERT_EQUAL(size_queue(q), 0);
+    CU_ASSERT_EQUAL(queue_size(q), 0);
     CU_ASSERT_EQUAL(val1, 1);
     CU_ASSERT_EQUAL(val2, 2);
     CU_ASSERT_EQUAL(val3, 3);
@@ -52,12 +52,12 @@ void test_enqueue_2(void) {
     CU_ASSERT_EQUAL(val6, 6);
 
     // Cleanup
-    destroy_queue(q);
+    queue_destroy(q);
 }
 
 void test_dequeue(void) {
     // Arrange
-    Queue* q = create_queue();
+    Queue* q = queue_create();
     enqueue(q, 1);
     enqueue(q, 2);
     enqueue(q, 3);
@@ -70,12 +70,26 @@ void test_dequeue(void) {
     int val4 = dequeue(q);
 
     // Assert
-    CU_ASSERT_EQUAL(size_queue(q), 0);
+    CU_ASSERT_EQUAL(queue_size(q), 0);
     CU_ASSERT_EQUAL(val1, 1);
     CU_ASSERT_EQUAL(val2, 2);
     CU_ASSERT_EQUAL(val3, 3);
     CU_ASSERT_EQUAL(val4, 4);
 
     // Cleanup
-    destroy_queue(q);
+    queue_destroy(q);
+}
+
+void test_destroy(void) {
+    // Arrange
+    Queue* q = queue_create();
+    enqueue(q, 1);
+    enqueue(q, 2);
+    enqueue(q, 3);
+
+    // Assert
+    CU_ASSERT(1);
+
+    // Cleanup
+    queue_destroy(q);
 }

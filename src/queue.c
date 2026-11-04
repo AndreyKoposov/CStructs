@@ -50,7 +50,7 @@ int dequeue(Queue* q) {
     return value;
 }
 
-Queue* create_queue() {
+Queue* queue_create() {
     Queue* new = malloc(sizeof(Queue));
     new->first = NULL;
     new->last = NULL;
@@ -59,10 +59,15 @@ Queue* create_queue() {
     return new;
 }
 
-void destroy_queue(Queue* q) {
+void queue_destroy(Queue* q) {
+    while (q->first != NULL) {
+        element* temp = q->first;
+        q->first = temp->next;
+        free(temp);
+    }
     free(q);
 }
 
-int size_queue(Queue* q) {
+int queue_size(Queue* q) {
     return q->size;
 }
